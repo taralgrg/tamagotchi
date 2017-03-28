@@ -1,0 +1,50 @@
+<div class="new-layout">
+  <div class="container-fluid" style="text-align:center">
+      <h3>
+          Your Kamagotchi
+          <%=@@my_pet.name%>
+          is
+          <% if @@my_pet.is_alive %>
+          Alive!!
+      <% else%>
+          Dead!!
+          <% end %>
+      </h3>
+  </div>
+
+  <div class="container-fluid image">
+
+      <% if @@my_pet.is_alive %>
+      <img class="img-responsive center-block" style="max-height:300px" src="https://media.giphy.com/media/rpduCvHHRDNlK/giphy.gif">
+
+  <% else %>
+      <img class="img-responsive center-block" style="max-height:300px" src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/30bd0c36336955.5718206881a3f.gif">
+      <% end %>
+  </div>
+
+  <div class="container-fluid">
+      <form action="/feed_food">
+          <button class="btn-success center-block">Food Level
+              <%=@@my_pet.food_level%>
+          </button>
+      </form>
+
+      <form action="/resting">
+          <button class="btn-success center-block">Sleep Level
+              <%=@@my_pet.sleep_level%>
+          </button>
+      </form>
+
+      <form action="/do_some_activity">
+          <button class="btn-success center-block">Activity Level
+              <%=@@my_pet.activity_level%>
+          </button>
+      </form>
+
+      <form action="/">
+          <button class="btn-danger center-block">Adopt a new Tamagotchi
+
+          </button>
+      </form>
+  </div>
+</div>
